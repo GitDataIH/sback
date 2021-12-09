@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Instant-Hack : Forum de Hacking - Sécurité Informatique et de Partage</title>
+<link rel="shortcut icon" href="https://i.imgur.com/LSK7sj0.png" type="image/x-icon">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://gitdata.instant-hack.fr/pages/error.css">
+<style type="text/css">
+.progress {
+  margin: 10px;
+  width: 700px;
+}
+.progress-bar{
+	background-color: #21232a !important;
+}
+</style>
+</head>
+<body>
+<div class="cover">
+<div id="logoBlock"><img src="https://i.imgur.com/RtRLcmm.png"></div><br>
+<img src="https://i.imgur.com/NzxKEi1.png" width="150" height="150">
+<h1>Sauvegarde en cours</h1>
+<p class="lead">Le Forum est de retour dans 5 minutes...</p><br/>
+<center>
+<div class="progress">
+  <div id="dynamic" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+    <span id="current-progress"></span>
+  </div>
+</div></center>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+  var current_progress = 0;
+  var interval = setInterval(function() {
+      current_progress += 1;
+      $("#dynamic")
+      .css("width", current_progress + "% ")
+      .attr("aria-valuenow", current_progress)
+      .text(current_progress + "% ");
+      if (current_progress >= 100)
+          clearInterval(interval);
+  }, 4000);
+});
+</script>
+</body>
+</html>
